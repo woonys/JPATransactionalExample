@@ -11,6 +11,6 @@ import java.util.List;
 public interface PostsRepository extends JpaRepository<Posts, Long>{ // 여기서 JpaRepository를 상속하면 기본 CRUD 메소드가 자동 생성.
 
     //쿼리 추가
-    @Query("SELECT p FROM Posts p ORDER BY p.id DESC")
+    @Query("SELECT p FROM Posts p ORDER BY p.id DESC") // 쿼리 추가: SpringDataJpa에서 제공하지 않는 메소드는 이렇게 쿼리로 작성해도 된다!
     List<Posts> findAllDesc();
 }
